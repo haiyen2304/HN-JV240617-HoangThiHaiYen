@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>SELFOWN</title>
+
+    <style>
+        *{
+            margin: 0;padding: 0;box-sizing: border-box;
+        }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+
+      .container {
+        background-color: rgb(225, 252, 255);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      .boxdau {
+        display: flex;
+        padding: 30px;
+        padding-left: 100px;
+      }
+      .buttontrangchu {
+        border: none;
+        cursor: pointer;
+        background-color: rgb(225, 252, 255);
+      }
+      .buttontrangchu:hover {
+        background-color: rgb(227, 198, 163);
+      }
+      .buttontrangchu:active {
+        background-color: red;
+      }
+
+      nav {
+        padding: 10px;
+        text-align: center;
+      }
+      ul {
+        /* list-style: none; bỏ style của ul */
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        /* display: inline-block; chuyển thẻ sang thẻ inline mang đặc tính của block, chuyển dọc thành ngang */
+
+        display: inline-block;
+        margin: 0 10px;
+      }
+
+      a {
+        color: rgb(102, 140, 28);
+        /* text-decoration: none; bỏ trang trí của chữ */
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: red;
+        background-color: #333;
+      }
+      .buttonboxcuoi {
+        cursor: pointer;
+        background-color: none;
+        background-color: rgb(225, 252, 255);
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 2px solid yellowgreen;
+        color: yellowgreen;
+        -webkit-box-shadow: 9px 7px 15px 7px rgba(139, 255, 181, 0.7);
+        box-shadow: 9px 7px 15px 7px rgba(139, 255, 181, 0.7);
+      }
+      /* phần main */
+      .containermaintop {
+        display: flex;
+      }
+      .boxmainleft {
+        position: relative;
+        width: 60%;
+        height: 648px; /* Bạn có thể điều chỉnh chiều cao theo nhu cầu */
+        background-image: url(https://th.bing.com/th/id/R.2d1bf50167bbc01e5720092084ee3bf9?rik=xB9kSLFCBDfcOA&riu=http%3a%2f%2fthuthuatphanmem.vn%2fuploads%2f2018%2f09%2f11%2fhinh-anh-dep-6_044127357.jpg&ehk=g1hC5ADWBCALT4vPZWI4M%2fmjOeSVF32fzLUV6Iw7aN4%3d&risl=&pid=ImgRaw&r=0);
+
+        background-size: cover; /* Đảm bảo hình ảnh bao phủ toàn bộ khu vực */
+        background-position: center; /* Canh giữa hình ảnh */
+        color: white; /* Màu chữ trắng */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .noidungboxmainleft {
+        position: relative;
+        z-index: 1;
+        font-size: 24px;
+        padding: 20px;
+        background: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* Nền đen với độ mờ để làm nổi bật chữ */
+        border-radius: 10px; /* Bo góc cho nền của chữ */
+      }
+      .boxmainbetwen {
+        position: relative;
+        width: 30%;
+        height: 648px;
+        background-image: url(https://img4.thuthuatphanmem.vn/uploads/2019/11/06/anh-chup-hoang-hon-tren-bien_025748015.jpg);
+
+        background-size: cover;
+        background-position: center;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .noidungboxmainbetwen {
+        position: relative;
+        z-index: 1;
+        font-size: 80px;
+      }
+      .boxmainright {
+        position: relative;
+        width: 30%;
+        height: 648px;
+        background-image: url(https://tophinhanhdep.com/wp-content/uploads/2021/10/720x1480-Wallpapers.jpg);
+        background-size: cover;
+        background-position: center;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        object-fit: cover;
+        filter: blur(2px);
+      }
+      .python {
+        text-decoration: underline;
+      }
+      .python {
+        border-bottom: 1px solid blue;
+      }
+      .DownloadCV {
+        background-color: none;
+        background-color: rgb(48, 120, 188);
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 2px solid rgb(12, 111, 203);
+        color: white;
+        font-size: 20px;
+        font-weight: 200;
+        cursor: pointer;
+        -webkit-box-shadow: 9px 7px 15px 7px rgba(0, 0, 0, 0.75);
+        box-shadow: 9px 7px 15px 7px rgba(0, 0, 0, 0.75);
+        transform: rotate(0);
+        transition: transform 0.5s ease;
+      }
+      .DownloadCV:hover {
+        background-color: black;
+
+        transition: width 1s, height 2s;
+        transform: rotate(0deg);
+        animation: pulse 0.5s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(9, 141, 235, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 20px rgba(52, 152, 219, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+        }
+      }
+      .DownloadCV:active {
+        background-color: red;
+      }
+      .containermaintop {
+        border-bottom-left-radius: 50% 30px;
+        border-bottom-right-radius: 50% 40px;
+        overflow: hidden;
+      }
+      /* style cho phần main  */
+      .PersonalDetails {
+        font-size: 24px;
+        width: 40%;
+        padding-top: 30px;
+        padding-left: 80px;
+      }
+      .material-symbols-outlined {
+        border-radius: 50%;
+        border: 2px solid rgb(157, 157, 213);
+        color: rgb(157, 157, 213);
+        padding: 5px;
+        margin: 5px;
+      }
+      .h2PersonalDetails {
+        text-decoration: underline;
+      }
+      .pPersonalDetails {
+        color: rgb(66, 57, 114);
+      }
+      .thongtin12 {
+        display: flex;
+        font-size: 20px;
+        justify-content: flex-end;
+        padding-right: 0;
+        margin: 0;
+        padding-top: 50px;
+        padding-left: 300px;
+      }
+      .main2 {
+        display: flex;
+      }
+      .android {
+        width: 40px;
+        height: 40px;
+        
+      }
+      .haidong {
+        padding-left: 0;
+        padding-right: 0;
+        gap : 0 ;
+        margin-left: 20px;
+      }
+      .aaa,.bbb,.ccc,.ddd,.eee,.fff,.ggg,.hhh {
+        display: flex;
+        border: 1px ;
+        padding: 10px 5px;
+        width: 200px;
+        border-radius: 10px;
+        -webkit-box-shadow: 5px 5px 7px 1px rgba(0,0,0,0.76); 
+box-shadow: 5px 5px 7px 1px rgba(0,0,0,0.76);
+        
+      }
+      
+      .image{
+        display: flex;
+        align-items: center;
+      }
+      .anhgiaodien{
+        display: flex;
+          justify-content: center;
+          gap: 15px;
+          flex-wrap: wrap;
+          padding: 50px;
+      }
+      .available{
+        background-color: rgb(223, 235, 235);
+
+        border-top-left-radius: 50% 40px;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 400px;
+        align-items: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        .anhnho {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+        }
+        
+      }
+
+      .availablephan1{
+        width: 50%;
+       
+      }
+      
+      .h1availablephan1{
+        font-size: 50px;
+        color: rgb(79, 79, 152);
+      }
+      .pavailablephan1{
+        font-size: 25px;
+        color: rgb(79, 79, 152);
+      }
+      .email{
+        padding: 20px;
+        border-radius: 10px;
+        width: 350px;
+        border: 1px solid rgb(162, 205, 211);
+      }
+      .send{
+        padding: 20px;
+        border-radius: 10px;
+        width: 150px;
+        border: 1px solid rgb(162, 205, 211);
+        color: white;
+        background-color: rgb(11, 11, 38);
+      }
+      .availablephan2{
+        padding: 20px;
+        z-index:2;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      />
+      <div class="container">
+        <div class="boxdau">
+          <div class="divimg"><img src="./bai thi/favicon.ico" alt="" /></div>
+          <button class="buttontrangchu">
+            <img src="./bai thi/logo-dark.png" alt="" />
+          </button>
+        </div>
+        <div class="boxgiua">
+          <nav>
+            <!-- mỗi dòng trong nav  -->
+            <ul>
+              <!-- li là các chữ trong dòng -->
+              <!-- a là đường dẫn -->
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Resume</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Blogs</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="boxcuoi">
+          <button class="buttonboxcuoi">Hire Me! >></button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!--  thân bài -->
+      <!--  thân bài trên -->
+      <div class="containermaintop">
+        <div class="boxmainleft">
+          <div class="noidungboxmainleft">
+            <p>Hi, I'm David Williamson</p>
+            <h1>
+              I'm a freelance <span class="python">Python</span> Developer
+            </h1>
+            <button class="DownloadCV">Download CV</button>
+          </div>
+        </div>
+        <div class="boxmainbetwen">
+          <div class="noidungboxmainbetwen"><p>556 x 848</p></div>
+        </div>
+        <div class="boxmainright"></div>
+      </div>
+      <!--  thân bài giữa Section Personal Details-->
+      <div class="main2">
+        <div class="PersonalDetails">
+          <h2 class="h2PersonalDetails">Personal Details</h2>
+          <p class="pPersonalDetails">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout
+          </p>
+          <div>
+            <span class="material-symbols-outlined"> heart_plus </span>
+            <span class="material-symbols-outlined">
+              deployed_code_account
+            </span>
+            <span class="material-symbols-outlined"> rocket_launch </span>
+            <span class="material-symbols-outlined"> diversity_3 </span>
+          </div>
+        </div>
+        <div class="thongtin12">
+          <div class="thongtin1">
+            <p>Date of birth :</p>
+            <p>Spoken Langages :</p>
+            <p>Nationality :</p>
+            <p>Interest :</p>
+          </div>
+          <div class="thongtin2">
+            <p>06 june 1989</p>
+            <p>English - French- German</p>
+            <p>USA</p>
+            <p>Music, Reading, Journey</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="anhgiaodien">
+        <div class="aaa">
+          <div class="image">
+            <img
+              class="android"
+              src="./bai thi/logos-20240701T021826Z-001/logos/android.svg"
+              alt=""
+            />
+            </div>
+            <div class="haidong">
+            <h3 class="Android">Android</h3>
+            <p class="2yearExperine">2 year Experine</p>
+          </div>
+        </div>
+
+        <div class="bbb">
+            <div class="image">
+              <img
+                class="android"
+                src="./bai thi/logos-20240701T021826Z-001/logos/Angular.svg"
+                alt=""
+              />
+              </div>
+              <div class="haidong">
+              <h3 class="Android">Angular</h3>
+              <p class="2yearExperine">1 year Experine</p>
+            </div>
+          </div>
+          <div class="ccc">
+            <div class="image">
+              <img
+                class="android"
+                src="./bai thi/logos-20240701T021826Z-001/logos/bootstrap.svg"
+                alt=""
+              />
+              </div>
+              <div class="haidong">
+              <h3 class="Android">bootstrap</h3>
+              <p class="2yearExperine">3 year Experine</p>
+            </div>
+          </div>
+          <div class="ddd">
+            <div class="image">
+              <img
+                class="android"
+                src="./bai thi/logos-20240701T021826Z-001/logos/vue.svg"
+                alt=""
+              />
+              </div>
+              <div class="haidong">
+              <h3 class="Android">Vue</h3>
+              <p class="2yearExperine">2 year Experine</p>
+            </div>
+          </div>
+          <div class="eee">
+            <div class="image">
+              <img
+                class="android"
+                src="./bai thi/logos-20240701T021826Z-001/logos/react.svg"
+                alt=""
+              />
+              </div>
+              <div class="haidong">
+              <h3 class="Android">react</h3>
+              <p class="2yearExperine">8 Months Experine</p>
+            </div>
+          </div>
+          <div class="fff">
+            <div class="image">
+              <img
+                class="android"
+                src="./bai thi/logos-20240701T021826Z-001/logos/mongodb.svg"
+                alt=""
+              />
+              </div>
+              <div class="haidong">
+              <h3 class="Android">mongodb</h3>
+              <p class="2yearExperine">3 Months Experine</p>
+            </div>
+          </div>
+          <div class="ggg">
+            <div class="image">
+              <img
+                class="android"
+                src="./bai thi/logos-20240701T021826Z-001/logos/laravel.svg"
+                alt=""
+              />
+              </div>
+              <div class="haidong">
+              <h3 class="Android">laravel</h3>
+              <p class="2yearExperine">1 year Experine</p>
+            </div>
+          </div>
+          <div class="ggg">
+            <div class="image">
+              <img
+                class="android"
+                src="./bai thi/logos-20240701T021826Z-001/logos/nodejs-icon.svg"
+                alt=""
+              />
+              </div>
+              <div class="haidong">
+              <h3 class="Android">nodejs</h3>
+              <p class="2yearExperine">10 Months Experine</p>
+            </div>
+          </div>
+          
+      </div >
+    <div class="available">
+        <div class="availablephan1">
+        <h1 class="h1availablephan1"> I Am Available For Freelancer </h1>
+        <p class="pavailablephan1"> Browse handreds of job offers and find the bestsuitable position</p>
+       </div>
+    
+       <div class="availablephan2">
+        <form action=""> 
+            <input class="email" type="email" id="email" name="email" value="Email Address" required />
+            <input class="send" type="submit" value="Send Massage" />
+        </form>
+       </div>
+       
+       <img class="anhnho" src="./bai thi/anh thi/testi-pet.png" alt="">
+    
+    </div>
+    </main> 
+
+  </body>
+</html>
